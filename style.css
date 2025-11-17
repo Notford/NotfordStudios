@@ -26,13 +26,13 @@ header nav {
 
 /* LOGO FIX — EXACTLY 1/5 OF HEADER */
 .logo {
-  flex:0 0 40%;
+  flex:0 0 20%;
   display:flex;
   align-items:center;
 }
 
 .logo img {
-  height:45px;
+  height:70px;
   width:auto;
   object-fit:contain;
   display:block;
