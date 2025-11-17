@@ -4,8 +4,6 @@ body { line-height:1.6; color:#333; }
 a { text-decoration:none; color:inherit; }
 
 
-
-
 /* Header */
 header {
   background:#111;
@@ -28,7 +26,7 @@ header nav {
 
 /* LOGO FIX — EXACTLY 1/5 OF HEADER */
 .logo {
-  flex:0 0 20%;
+  flex:0 0 40%;
   display:flex;
   align-items:center;
 }
