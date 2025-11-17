@@ -5,67 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notford Studios</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Notford Studios</h1>
     <nav>
-      <a href="#services">Services</a>
-      <a href="#works">Works</a>
-      <a href="#appointments">Appointments</a>
+      <div class="logo">Notford Studios</div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
+  <section id="home" class="hero">
+    <h1>Welcome to Notford Studios</h1>
+    <p>Professional IT, Photography, Videography, and Design Services</p>
+    <a href="#contact" class="btn">Book a Session</a>
+  </section>
+
   <section id="services">
     <h2>Our Services</h2>
-    <ul>
-      <li>Photography</li>
-      <li>Videography</li>
-      <li>Graphic Design</li>
-      <li>Modeling Management</li>
-    </ul>
+    <div class="services-container">
+      <div class="service-card">
+        <h3>Photography</h3>
+        <p>High quality photos for events, portraits, and products.</p>
+      </div>
+      <div class="service-card">
+        <h3>Videography</h3>
+        <p>Professional video production for any occasion.</p>
+      </div>
+      <div class="service-card">
+        <h3>Graphic Design</h3>
+        <p>Logos, branding, posters, and digital assets.</p>
+      </div>
+      <div class="service-card">
+        <h3>Software Solutions</h3>
+        <p>Websites, apps, and custom software tailored to your business.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="works">
+  <section id="portfolio">
     <h2>Our Works</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/300x200" alt="Sample Work 1">
-      <img src="https://via.placeholder.com/300x200" alt="Sample Work 2">
-      <img src="https://via.placeholder.com/300x200" alt="Sample Work 3">
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><img src="https://via.placeholder.com/300x200" alt="Project 1"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/300x200" alt="Project 2"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/300x200" alt="Project 3"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/300x200" alt="Project 4"></div>
     </div>
   </section>
 
-  <section id="appointments">
-    <h2>Book an Appointment</h2>
-    <div id="message" class="message" hidden></div>
-    <form id="bookingForm">
-      <input type="text" id="clientName" placeholder="Full Name" required>
-      <input type="email" id="clientEmail" placeholder="Email" required>
-      <select id="serviceSelect" required>
-        <option value="">Select Service</option>
-        <option value="Photography">Photography</option>
-        <option value="Videography">Videography</option>
-        <option value="Graphic Design">Graphic Design</option>
-        <option value="Modeling Management">Modeling Management</option>
-      </select>
-      <input type="date" id="date" required>
-      <input type="time" id="time" required>
-      <textarea id="notes" placeholder="Additional notes"></textarea>
-      <button type="submit">Book Appointment</button>
+  <section id="contact">
+    <h2>Contact & Booking</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <textarea name="notes" placeholder="Additional Notes"></textarea>
+      <button type="submit">Submit</button>
     </form>
-    <button id="manageBtn">Admin Portal</button>
-
-    <div id="appointmentsPanel">
-      <h3>Appointments</h3>
-      <ul id="appointmentsList" hidden></ul>
-      <div id="emptyState">No appointments found.</div>
-    </div>
+    <p id="formMessage"></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Notford Studios</p>
+    <p>&copy; 2025 Notford Studios. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
