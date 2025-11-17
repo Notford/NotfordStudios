@@ -33,5 +33,25 @@ form input, form textarea, form button { padding:0.8rem; border-radius:5px; bord
 form button { background:#111; color:#fff; border:none; cursor:pointer; transition:0.3s; }
 form button:hover { background:#f39c12; }
 
+/* Header logo */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Hero Logo */
+.hero-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Footer Logo */
+.footer-logo {
+  width: 90px;
+  margin-bottom: 0.5rem;
+}
+
+
 /* Footer */
 footer { background:#111; color:#fff; text-align:center; padding:1rem; margin-top:2rem; }
