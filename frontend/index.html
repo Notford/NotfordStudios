@@ -1,169 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Notford Studios — Creative Tech & Media</title>
-  <meta name="description" content="Notford Studios — Photography | Videography | Design | Software. Book services, view portfolio, and manage appointments." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notford Studios</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">Notford Studios</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#works">Works</a>
-        <a href="#book">Book</a>
-        <a href="#appointments" id="manageBtn">Manage</a>
-      </nav>
-      <a class="cta" href="#book">Book Now</a>
-    </div>
+  <header>
+    <h1>Notford Studios</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#works">Works</a>
+      <a href="#appointments">Appointments</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>We craft visuals & apps that tell your story</h1>
-          <p>Professional photography, videography, graphic design and bespoke software solutions for brands and creators.</p>
-          <p class="muted">Studio — Remote — On-location</p>
-          <div class="hero-actions">
-            <a class="btn" href="#book">Book a Session</a>
-            <a class="btn btn-ghost" href="#works">View Portfolio</a>
-          </div>
-        </div>
-        <div class="hero-image" aria-hidden="true">
-          <!-- placeholder rectangle — replace with real hero image -->
-          <div class="image-placeholder">Showcase</div>
-        </div>
-      </div>
-    </section>
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Photography</li>
+      <li>Videography</li>
+      <li>Graphic Design</li>
+      <li>Modeling Management</li>
+    </ul>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section container">
-      <h2 class="section-title">Services</h2>
-      <div class="services-grid" role="list">
-        <article class="service-card" role="listitem">
-          <h3>Photography</h3>
-          <p>Portraits, fashion, product and event photography with full retouching.</p>
-        </article>
-        <article class="service-card" role="listitem">
-          <h3>Videography</h3>
-          <p>Short-form reels, promos, commercials, interviews — end-to-end production.</p>
-        </article>
-        <article class="service-card" role="listitem">
-          <h3>Graphic Design</h3>
-          <p>Brand identity, posters, packaging and social assets designed to convert.</p>
-        </article>
-        <article class="service-card" role="listitem">
-          <h3>Software & Web</h3>
-          <p>Professional websites, booking systems and custom web apps for creators & small business.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- WORKS / PORTFOLIO -->
-    <section id="works" class="section container">
-      <h2 class="section-title">Selected Works</h2>
-      <div class="portfolio-grid" aria-live="polite">
-        <!-- Placeholders: Replace with real images and links -->
-        <figure class="portfolio-item">
-          <div class="thumb">Project 1</div>
-          <figcaption>Fashion Editorial — Photography</figcaption>
-        </figure>
-        <figure class="portfolio-item">
-          <div class="thumb">Project 2</div>
-          <figcaption>Short Promo — Videography</figcaption>
-        </figure>
-        <figure class="portfolio-item">
-          <div class="thumb">Project 3</div>
-          <figcaption>Brand Identity — Graphic Design</figcaption>
-        </figure>
-        <figure class="portfolio-item">
-          <div class="thumb">Project 4</div>
-          <figcaption>Website — Notford Client</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- BOOKING -->
-    <section id="book" class="section booking container">
-      <h2 class="section-title">Book an Appointment</h2>
-      <p class="muted">Fill the form — we’ll confirm availability. This demo saves to your browser (local storage).</p>
-
-      <form id="bookingForm" class="form-grid" autocomplete="off" novalidate>
-        <div class="form-field">
-          <label for="clientName">Full name</label>
-          <input id="clientName" name="clientName" type="text" required placeholder="Jane Doe" />
-        </div>
-
-        <div class="form-field">
-          <label for="clientEmail">Email</label>
-          <input id="clientEmail" name="clientEmail" type="email" required placeholder="name@example.com" />
-        </div>
-
-        <div class="form-field">
-          <label for="serviceSelect">Service</label>
-          <select id="serviceSelect" name="service" required>
-            <option value="">Choose a service</option>
-            <option>Photography - Portrait</option>
-            <option>Photography - Fashion</option>
-            <option>Videography - Promo</option>
-            <option>Graphic Design</option>
-            <option>Website / Software</option>
-            <option>Studio Rental</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="date">Preferred date</label>
-          <input id="date" name="date" type="date" required />
-        </div>
-
-        <div class="form-field">
-          <label for="time">Preferred time</label>
-          <input id="time" name="time" type="time" required />
-        </div>
-
-        <div class="form-field full">
-          <label for="notes">Notes (optional)</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or brief"></textarea>
-        </div>
-
-        <div class="form-actions full">
-          <button class="btn" type="submit">Request Appointment</button>
-          <button class="btn btn-ghost" type="reset">Reset</button>
-        </div>
-      </form>
-
-      <div id="message" role="status" aria-live="polite" class="message" hidden></div>
-    </section>
-
-    <!-- APPOINTMENTS (Client-side management) -->
-    <section id="appointments" class="section container">
-      <h2 class="section-title">Appointments</h2>
-      <p class="muted">Manage appointments saved in this browser. Click <strong>Manage</strong> in the header to open quickly.</p>
-
-      <div class="appointments-panel" id="appointmentsPanel" aria-live="polite">
-        <div id="emptyState" class="muted">No appointments yet.</div>
-        <ul id="appointmentsList" class="appointments-list" hidden></ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Notford Studios</div>
-      <div class="social muted">Email: <a href="mailto:kwame.notford@gmail.com">kwame.notford@gmail.com</a></div>
+  <section id="works">
+    <h2>Our Works</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200" alt="Sample Work 1">
+      <img src="https://via.placeholder.com/300x200" alt="Sample Work 2">
+      <img src="https://via.placeholder.com/300x200" alt="Sample Work 3">
     </div>
-  </footer>
+  </section>
 
-  <!-- Minimal client-side JS for booking + localStorage management -->
-  <script> src="script.js" defer></script>
+  <section id="appointments">
+    <h2>Book an Appointment</h2>
+    <div id="message" class="message" hidden></div>
+    <form id="bookingForm">
+      <input type="text" id="clientName" placeholder="Full Name" required>
+      <input type="email" id="clientEmail" placeholder="Email" required>
+      <select id="serviceSelect" required>
+        <option value="">Select Service</option>
+        <option value="Photography">Photography</option>
+        <option value="Videography">Videography</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Modeling Management">Modeling Management</option>
+      </select>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <textarea id="notes" placeholder="Additional notes"></textarea>
+      <button type="submit">Book Appointment</button>
+    </form>
+    <button id="manageBtn">Admin Portal</button>
+
+    <div id="appointmentsPanel">
+      <h3>Appointments</h3>
+      <ul id="appointmentsList" hidden></ul>
+      <div id="emptyState">No appointments found.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Notford Studios</p>
+  </footer>
 </body>
 </html>
- 
+
