@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notford Studios — Creative Tech & Media</title>
+  <meta name="description" content="Notford Studios — Photography | Videography | Design | Software. Book services, view portfolio, and manage appointments." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Notford Studios</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#works">Works</a>
+        <a href="#book">Book</a>
+        <a href="#appointments" id="manageBtn">Manage</a>
+      </nav>
+      <a class="cta" href="#book">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>We craft visuals & apps that tell your story</h1>
+          <p>Professional photography, videography, graphic design and bespoke software solutions for brands and creators.</p>
+          <p class="muted">Studio — Remote — On-location</p>
+          <div class="hero-actions">
+            <a class="btn" href="#book">Book a Session</a>
+            <a class="btn btn-ghost" href="#works">View Portfolio</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <!-- placeholder rectangle — replace with real hero image -->
+          <div class="image-placeholder">Showcase</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section container">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid" role="list">
+        <article class="service-card" role="listitem">
+          <h3>Photography</h3>
+          <p>Portraits, fashion, product and event photography with full retouching.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h3>Videography</h3>
+          <p>Short-form reels, promos, commercials, interviews — end-to-end production.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h3>Graphic Design</h3>
+          <p>Brand identity, posters, packaging and social assets designed to convert.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h3>Software & Web</h3>
+          <p>Professional websites, booking systems and custom web apps for creators & small business.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORKS / PORTFOLIO -->
+    <section id="works" class="section container">
+      <h2 class="section-title">Selected Works</h2>
+      <div class="portfolio-grid" aria-live="polite">
+        <!-- Placeholders: Replace with real images and links -->
+        <figure class="portfolio-item">
+          <div class="thumb">Project 1</div>
+          <figcaption>Fashion Editorial — Photography</figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <div class="thumb">Project 2</div>
+          <figcaption>Short Promo — Videography</figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <div class="thumb">Project 3</div>
+          <figcaption>Brand Identity — Graphic Design</figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <div class="thumb">Project 4</div>
+          <figcaption>Website — Notford Client</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="book" class="section booking container">
+      <h2 class="section-title">Book an Appointment</h2>
+      <p class="muted">Fill the form — we’ll confirm availability. This demo saves to your browser (local storage).</p>
+
+      <form id="bookingForm" class="form-grid" autocomplete="off" novalidate>
+        <div class="form-field">
+          <label for="clientName">Full name</label>
+          <input id="clientName" name="clientName" type="text" required placeholder="Jane Doe" />
+        </div>
+
+        <div class="form-field">
+          <label for="clientEmail">Email</label>
+          <input id="clientEmail" name="clientEmail" type="email" required placeholder="name@example.com" />
+        </div>
+
+        <div class="form-field">
+          <label for="serviceSelect">Service</label>
+          <select id="serviceSelect" name="service" required>
+            <option value="">Choose a service</option>
+            <option>Photography - Portrait</option>
+            <option>Photography - Fashion</option>
+            <option>Videography - Promo</option>
+            <option>Graphic Design</option>
+            <option>Website / Software</option>
+            <option>Studio Rental</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="date">Preferred date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+
+        <div class="form-field">
+          <label for="time">Preferred time</label>
+          <input id="time" name="time" type="time" required />
+        </div>
+
+        <div class="form-field full">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or brief"></textarea>
+        </div>
+
+        <div class="form-actions full">
+          <button class="btn" type="submit">Request Appointment</button>
+          <button class="btn btn-ghost" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <div id="message" role="status" aria-live="polite" class="message" hidden></div>
+    </section>
+
+    <!-- APPOINTMENTS (Client-side management) -->
+    <section id="appointments" class="section container">
+      <h2 class="section-title">Appointments</h2>
+      <p class="muted">Manage appointments saved in this browser. Click <strong>Manage</strong> in the header to open quickly.</p>
+
+      <div class="appointments-panel" id="appointmentsPanel" aria-live="polite">
+        <div id="emptyState" class="muted">No appointments yet.</div>
+        <ul id="appointmentsList" class="appointments-list" hidden></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Notford Studios</div>
+      <div class="social muted">Email: <a href="mailto:kwame.notford@gmail.com">kwame.notford@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <!-- Minimal client-side JS for booking + localStorage management -->
+  <script>
+    // Utilities
+    const qs = (s) => document.querySelector(s);
+    const qsa = (s) => document.querySelectorAll(s);
+
+    // Elements
+    const bookingForm = qs('#bookingForm');
+    const message = qs('#message');
+    const appointmentsList = qs('#appointmentsList');
+    const emptyState = qs('#emptyState');
+    const manageBtn = qs('#manageBtn');
+    const appointmentsPanel = qs('#appointmentsPanel');
+
+    // Storage key
+    const STORAGE_KEY = 'notford_appointments_v1';
+
+    // Render current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Load appointments from storage
+    function loadAppointments() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        console.error('Failed to parse appointments', e);
+        return [];
+      }
+    }
+
+    function saveAppointments(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function renderAppointments() {
+      const list = loadAppointments();
+      appointmentsList.innerHTML = '';
+      if (!list.length) {
+        appointmentsList.hidden = true;
+        emptyState.hidden = false;
+        return;
+      }
+      emptyState.hidden = true;
+      appointmentsList.hidden = false;
+
+      list.forEach((appt) => {
+        const li = document.createElement('li');
+        li.className = 'appointment';
+        li.dataset.id = appt.id;
+        li.innerHTML = `
+          <div class="appointment-main">
+            <div class="appt-meta">
+              <strong>${escapeHtml(appt.clientName)}</strong>
+              <div class="muted small">${escapeHtml(appt.email)}</div>
+            </div>
+            <div class="appt-when">
+              <div>${escapeHtml(appt.service)}</div>
+              <div class="muted small">${escapeHtml(appt.date)} @ ${escapeHtml(appt.time)}</div>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn small mark-done">${appt.done ? 'Completed' : 'Mark done'}</button>
+            <button class="btn btn-ghost small delete">Delete</button>
+          </div>
+        `;
+
+        // Actions
+        li.querySelector('.delete').addEventListener('click', () => {
+          deleteAppointment(appt.id);
+        });
+
+        li.querySelector('.mark-done').addEventListener('click', (e) => {
+          toggleDone(appt.id);
+        });
+
+        appointmentsList.appendChild(li);
+      });
+    }
+
+    function addAppointment(data) {
+      const list = loadAppointments();
+      const appt = {
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+        clientName: data.clientName,
+        email: data.clientEmail,
+        service: data.service,
+        date: data.date,
+        time: data.time,
+        notes: data.notes || '',
+        createdAt: new Date().toISOString(),
+        done: false
+      };
+      list.unshift(appt);
+      saveAppointments(list);
+      renderAppointments();
+      return appt;
+    }
+
+    function deleteAppointment(id) {
+      let list = loadAppointments();
+      list = list.filter(i => i.id !== id);
+      saveAppointments(list);
+      renderAppointments();
+      showMessage('Appointment deleted.', 'info');
+    }
+
+    function toggleDone(id) {
+      const list = loadAppointments();
+      const idx = list.findIndex(i => i.id === id);
+      if (idx > -1) {
+        list[idx].done = !list[idx].done;
+        saveAppointments(list);
+        renderAppointments();
+        showMessage(list[idx].done ? 'Marked completed.' : 'Marked not completed.', 'info');
+      }
+    }
+
+    // Simple XSS-safe escape for text nodes
+    function escapeHtml(s) {
+      return String(s || '').replace(/[&<>"']/g, function (m) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]);
+      });
+    }
+
+    // Message helper
+    function showMessage(text, type = 'success') {
+      message.hidden = false;
+      message.textContent = text;
+      message.className = 'message ' + type;
+      setTimeout(() => {
+        message.hidden = true;
+      }, 3500);
+    }
+
+    // Booking validation (basic)
+    function validateBooking(formData) {
+      if (!formData.clientName.trim()) return 'Please enter your full name.';
+      if (!formData.clientEmail.trim() || !/^\S+@\S+\.\S+$/.test(formData.clientEmail)) return 'Please provide a valid email.';
+      if (!formData.service) return 'Please choose a service.';
+      if (!formData.date) return 'Please pick a preferred date.';
+      if (!formData.time) return 'Please pick a preferred time.';
+      // Prevent past dates
+      const today = new Date();
+      const chosen = new Date(formData.date + 'T' + formData.time);
+      if (chosen < new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0)) {
+        return 'Please choose a date that is today or in the future.';
+      }
+      return null;
+    }
+
+    // Form submit
+    bookingForm.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const data = {
+        clientName: qs('#clientName').value.trim(),
+        clientEmail: qs('#clientEmail').value.trim(),
+        service: qs('#serviceSelect').value,
+        date: qs('#date').value,
+        time: qs('#time').value,
+        notes: qs('#notes').value.trim()
+      };
+
+      const error = validateBooking(data);
+      if (error) {
+        showMessage(error, 'error');
+        return;
+      }
+
+      const appt = addAppointment(data);
+      bookingForm.reset();
+      showMessage('Appointment requested. You’ll receive a confirmation soon (demo stores locally).', 'success');
+
+      // Optional: focus top of page to see message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Manage button opens / scrolls to appointments
+    manageBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // basic admin guard: ask for short passcode (change as needed) — demo only
+      const pass = prompt('Enter admin pass to manage appointments (demo):');
+      if (pass === null) return;
+      if (pass !== 'notford-admin') {
+        alert('Incorrect pass.');
+        return;
+      }
+      // Scroll to appointments
+      qs('#appointments').scrollIntoView({behavior: 'smooth'});
+    });
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAppointments();
+    });
+  </script>
+</body>
+</html>
+ 
