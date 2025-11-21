@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Notford Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-body">
+
+  <div class="admin-login-box">
+    <h2>Admin Login</h2>
+
+    <input type="text" id="adminUser" placeholder="Username">
+    <input type="password" id="adminPass" placeholder="Password">
+
+    <button id="adminLoginBtn">Login</button>
+
+    <p id="adminLoginMsg"></p>
+  </div>
+
+<script>
+  // SIMPLE LOGIN — you can change credentials here
+  const ADMIN = { user: "notford", pass: "studio123" };
+
+  document.getElementById("adminLoginBtn").onclick = () => {
+    let u = adminUser.value.trim();
+    let p = adminPass.value.trim();
+
+    if (u === ADMIN.user && p === ADMIN.pass) {
+      localStorage.setItem("isAdmin", "true");
+      window.location.href = "admin-dashboard.html";
+    } else {
+      adminLoginMsg.textContent = "Incorrect login details.";
+      adminLoginMsg.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
