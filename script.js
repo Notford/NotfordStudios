@@ -26,3 +26,22 @@ form.addEventListener('submit', async (e) => {
     console.error(err);
   }
 });
+
+// Footer double-tap admin login
+let lastTap = 0;
+const footerLogo = document.getElementById("footerLogo");
+
+footerLogo.addEventListener("click", () => {
+  const currentTime = new Date().getTime();
+  
+  if (currentTime - lastTap < 500) { // double-tap detected
+    const password = prompt("Enter admin password:");
+    if (password === "studio123") { // default admin password
+      window.location.href = "admin-login.html";
+    } else {
+      alert("Incorrect password.");
+    }
+  }
+  
+  lastTap = currentTime;
+});
