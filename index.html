@@ -89,27 +89,5 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
-
-  <script>
-    // ======== SECRET ADMIN ACCESS THROUGH FOOTER LOGO ========
-    let lastTap = 0;
-
-    document.getElementById("footerLogo").addEventListener("click", function () {
-      let currentTime = new Date().getTime();
-      let tapGap = currentTime - lastTap;
-
-      if (tapGap < 300 && tapGap > 0) {
-        let pass = prompt("Enter Admin Password:");
-
-        if (pass === "notfordadmin") {
-          window.location.href = "admin-login.html";
-        } else if (pass !== null) {
-          alert("Incorrect password.");
-        }
-      }
-      lastTap = currentTime;
-    });
-  </script>
-
 </body>
 </html>
