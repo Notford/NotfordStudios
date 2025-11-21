@@ -25,7 +25,7 @@ header nav {
 
 /* Header Logo — small */
 header .logo img {
-  height:70px !important;
+  height:140px !important;
   width:auto;
   object-fit:contain;
 }
@@ -74,7 +74,7 @@ header .logo img {
 
 /* Hero/Home Logo — big */
 .hero-logo {
-  height:200px !important;
+  height:300px !important;
   width:auto;
   object-fit:contain;
   margin-bottom:1rem;
