@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Notford Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <h2>Admin Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <section class="dashboard-container">
+
+    <!-- ADD USER -->
+    <div class="admin-card">
+      <h3>Add User</h3>
+      <input type="text" id="newUserName" placeholder="Username">
+      <input type="password" id="newUserPass" placeholder="Password">
+      <select id="newUserRole">
+        <option value="viewer">Viewer</option>
+        <option value="editor">Editor</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button onclick="addUser()">Add User</button>
+      <p id="addUserMsg"></p>
+    </div>
+
+    <!-- UPLOAD PROJECT -->
+    <div class="admin-card">
+      <h3>Upload Project</h3>
+      <input type="text" id="projectTitle" placeholder="Project Title">
+      <input type="file" id="projectFile">
+      <button onclick="uploadProject()">Upload</button>
+      <p id="projectMsg"></p>
+    </div>
+
+    <!-- VIEW APPOINTMENTS -->
+    <div class="admin-card">
+      <h3>Appointments</h3>
+      <div id="appointmentsList"></div>
+    </div>
+
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>
