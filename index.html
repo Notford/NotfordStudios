@@ -83,12 +83,33 @@
 
   <!-- Footer -->
   <footer>
-   <a href="admin-login.html">
-  <img class="footer-logo" src="assets/1-removebg-preview.png" alt="Notford Studios Logo Black" style="cursor:pointer;">
-   </a>
+    <img id="footerLogo" class="footer-logo" src="assets/1-removebg-preview.png" alt="Notford Studios Logo Black">
     <p>&copy; 2025 Notford Studio & IT Solutions. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
+
+  <script>
+    // ======== SECRET ADMIN ACCESS THROUGH FOOTER LOGO ========
+    let lastTap = 0;
+
+    document.getElementById("footerLogo").addEventListener("click", function () {
+      let currentTime = new Date().getTime();
+      let tapGap = currentTime - lastTap;
+
+      if (tapGap < 300 && tapGap > 0) {
+        let pass = prompt("Enter Admin Password:");
+
+        if (pass === "notfordadmin") {
+          window.location.href = "admin-login.html";
+        } else if (pass !== null) {
+          alert("Incorrect password.");
+        }
+      }
+      lastTap = currentTime;
+    });
+  </script>
+
 </body>
 </html>
