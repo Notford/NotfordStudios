@@ -13,38 +13,97 @@
     <button onclick="logout()">Logout</button>
   </header>
 
-  <section class="dashboard-container">
+  <div class="dashboard-container">
 
-    <!-- Add User -->
-    <div class="admin-card">
-      <h3>Add User</h3>
-      <input type="text" id="newUserName" placeholder="Username">
-      <input type="password" id="newUserPass" placeholder="Password">
-      <select id="newUserRole">
-        <option value="viewer">Viewer</option>
-        <option value="editor">Editor</option>
-        <option value="admin">Admin</option>
-      </select>
-      <button onclick="addUser()">Add User</button>
-      <p id="addUserMsg"></p>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h3>Menu</h3>
+      <a href="#" class="active" onclick="showSection('users')">Users</a>
+      <a href="#" onclick="showSection('projects')">Projects</a>
+      <a href="#" onclick="showSection('appointments')">Appointments</a>
+      <a href="#" onclick="showSection('settings')">Settings</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="admin-content">
+
+      <!-- Users Section -->
+      <div id="users" class="admin-section active">
+        <div class="admin-card">
+          <h3>Add User</h3>
+          <input type="text" id="newUserName" placeholder="Username">
+          <input type="password" id="newUserPass" placeholder="Password">
+          <select id="newUserRole">
+            <option value="viewer">Viewer</option>
+            <option value="editor">Editor</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button onclick="addUser()">Add User</button>
+        </div>
+
+        <div class="admin-card">
+          <h3>All Users</h3>
+          <table class="admin-table" id="usersTable">
+            <thead>
+              <tr><th>Username</th><th>Role</th><th>Actions</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div id="projects" class="admin-section">
+        <div class="admin-card">
+          <h3>Upload Project</h3>
+          <input type="text" id="projectTitle" placeholder="Project Title">
+          <input type="file" id="projectFile">
+          <button onclick="uploadProject()">Upload</button>
+        </div>
+
+        <div class="admin-card">
+          <h3>All Projects</h3>
+          <table class="admin-table" id="projectsTable">
+            <thead>
+              <tr><th>Title</th><th>File</th><th>Actions</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Appointments Section -->
+      <div id="appointments" class="admin-section">
+        <div class="admin-card">
+          <h3>Appointments</h3>
+          <table class="admin-table" id="appointmentsTable">
+            <thead>
+              <tr><th>Name</th><th>Email</th><th>Service</th><th>Date & Time</th><th>Notes</th><th>Status</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settings" class="admin-section">
+        <div class="admin-card">
+          <h3>Admin Settings</h3>
+          <input type="password" id="oldPassword" placeholder="Current Password">
+          <input type="password" id="newPassword" placeholder="New Password">
+          <button onclick="changeAdminPassword()">Change Password</button>
+        </div>
+        <div class="admin-card">
+          <h3>Maintenance</h3>
+          <button onclick="clearAllData()">Clear All Data</button>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Upload Project -->
-    <div class="admin-card">
-      <h3>Upload Project</h3>
-      <input type="text" id="projectTitle" placeholder="Project Title">
-      <input type="file" id="projectFile">
-      <button onclick="uploadProject()">Upload</button>
-      <p id="projectMsg"></p>
-    </div>
-
-    <!-- View Appointments -->
-    <div class="admin-card">
-      <h3>Appointments</h3>
-      <div id="appointmentsList"></div>
-    </div>
-
-  </section>
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
 
   <script src="admin.js"></script>
 </body>
